@@ -1,0 +1,42 @@
+POST http://localhost:3000/api/player/add HTTP/1.1
+content-type: application/json
+
+{
+    "players_name":"Elham Salmanian",
+    "status":"Inactive",
+    "rank":1000,
+    "favoritegame":"Tic Tac Toe",
+    "score":30000000,
+    "time":"4d"
+}
+
+###
+GET http://localhost:3000/api/player/all
+
+###
+POST http://localhost:3000/api/game/add HTTP/1.1
+content-type: application/json
+
+{
+    "name":"Fortnite",
+    "status":"Unavailable",
+    "release":2016,
+    "genre":"Fight",
+    "publisher":"Elham",
+    "creator":"Elham's son",
+    "restricted_age":10
+}
+###
+GET http://localhost:3000/api/game/all
+###
+POST http://localhost:3000/api/admin/add HTTP/1.1
+content-type: application/json
+
+{
+    "name":"Elham Salmanian",
+    "email":"elham.salmanian@gmail.com",
+    "password":"secret_password"
+}
+
+###
+DELETE http://localhost:3000/api/game/all

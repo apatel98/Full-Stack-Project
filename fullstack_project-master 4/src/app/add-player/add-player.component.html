@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+  <div class="col-md-4 create-players">
+    <!-- form create -->
+    <div class="card-body">
+      <form [formGroup]="playerForm" (ngSubmit)="onSubmit()">
+
+
+        <mat-form-field>
+          <label for="playername">Player Name : </label>
+          <input matInput placeholder="Player Name" formControlName="playername">
+          <mat-error *ngIf="submitted && myForm.playername.errors?.required">Player name is required!</mat-error>
+        </mat-form-field>
+        <div></div>
+        <mat-form-field>
+            <mat-select placeholder="Select Rank" (change)="updateRank($event.target.value)" formControlName="rank">
+              <mat-option value="">Select One...</mat-option>
+              <mat-option *ngFor="let rank of Ranks" value="{{rank}}">{{rank}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="submitted && myForm.rank.errors?.required">Rank is required!</mat-error>
+        </mat-form-field>
+        <div></div>
+
+        <mat-form-field>
+            <mat-select placeholder="Select Favorite Game" (change)="updateGame($event.target.value)" formControlName="favouritegame">
+              <mat-option value="">Select One</mat-option>
+              <mat-option *ngFor="let favourite_game of FavouriteGames" value="{{favourite_game}}">{{favourite_game}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="submitted && myForm.favouritegame.errors?.required">Select Game to Add!</mat-error>
+        </mat-form-field>
+         <div></div>
+        <mat-form-field>
+            <mat-select placeholder="Select Status" (change)="updateStatus($event.target.value)" formControlName="status">
+              <mat-option value="">Choose...</mat-option>
+              <mat-option *ngFor="let status of Status" value="{{status}}">{{status}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="submitted && myForm.status.errors?.required">Select status!</mat-error>
+        </mat-form-field>
+
+        
+
+        <div></div>
+        <mat-form-field>
+            <label for="Time">Time : </label>
+            <input matInput placeholder="Time" formControlName="time">
+            <mat-error *ngIf="submitted && myForm.time.errors?.required">Time must be Delcared</mat-error>
+          </mat-form-field>
+        <div class="form-group">
+          <button mat-raised-button class="btn btn-success btn-lg btn-block" type="submit">Create New Player</button>
+        
+          <button mat-raised-button class="btn btn-success btn-lg btn-block" type="submit">Cancel</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
