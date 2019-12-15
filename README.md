@@ -1,8 +1,8 @@
 # Full-Stack-Project
 Repo for Full Stack Project
 
-Name: Patrick Parreno, Asim Patel
-Student ID: 101085299, 101162370
+-Name: Patrick Parreno, Asim Patel
+-Student ID: 101085299, 101162370
 
 # Conclusion
 
